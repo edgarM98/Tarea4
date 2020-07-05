@@ -82,17 +82,29 @@ En la figura siguiente se puede observar la señal ahora con ruido para cada uno
 ##  PREGUNTA 4
 (10 %) Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
 
-Se procedió a graficar la densidad espectral de potencia de la señal con el método de Welch antes del canal ruidoso y se obtuvo la gráfica siguiente.
+Primero se graficó la la densidad espectral de potencia de la señal con el método de Welch antes del canal ruidoso para cada uno de los valores de SNR, por medio del siguiente código:
+
+      # Antes del canal ruidoso
+      fw, PSD = signal.welch(senal, fs, nperseg=1024)
+      plt.figure()
+      plt.semilogy(fw, PSD)
+
+Se obtuvo la siguiente gráfica:
 
 ![antes_ruido](/antes_ruido.png)
 
+Tiene este comportamiento ya que se realiza antes del ruido, por lo cual no se ve influenciado por la presencia del ruido.
 
-Ahora se procedió a calcular nuevamente la densidad espectral de potencia de la señal, pero esta vez luego del canal ruidoso. Se obtuvo la siguiente gráfica.
+Luego se procedió a calcular nuevamente la densidad espectral de potencia de la señal para cada uno de los valores de SNR, pero esta vez luego del canal ruidoso, por medio del siguiente código:
 
 ![despues_ruido](/despues_ruido.png)
 
+       # Después del canal ruidoso
+      fw, PSD = signal.welch(Rx, fs, nperseg=1024)
+      plt.figure()
+      plt.semilogy(fw, PSD)
 
-
+Como se observa, al incluir el ruido ahora cambia la magnitud en la curva para cada uno de los valores de SNR. La curva en color azul corresponde a la de SNR = -2 y la curva de color azul corresponde a la de color café.
 
 
 ##  PREGUNTA 5
