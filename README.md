@@ -69,7 +69,7 @@ Para esta parte se procedió a simular un canal ruidoso del tipo AWGN (ruido adi
 
 Al graficar este ruido para un valor de SNR = -1, se obtiene lo siguiente:
 
-![ruido_primerSNR](/ruido_primerSN.png)
+![ruido_primerSNR](/ruido_primerSNR.png)
 
 
 Posteriormente, se procedió realizar el mismo procedimiento para todos los valores de SNR solicitados (-1, -2, 0, 1, 2, 3) y se graficó en una misma figura, se obtuvo lo siguiente:
@@ -110,12 +110,70 @@ Como se observa, al incluir el ruido ahora cambia la magnitud en la curva para c
 ##  PREGUNTA 5
 (20 %) Demodular y decodificar la señal y hacer un conteo de la tasa de error de bits (BER, bit error rate) para cada nivel SNR.
 
+Para esta parte, se utilizó las siguientes líneas de código:
+
+      # Pseudo-energía de la onda original, Suma de la pot instantánea al cuadrado
+      Es = np.sum(sinus**2)
+
+      # Inicialización del vector de bits recibidos
+      bitsRx = np.zeros(bits.shape)
+
+      # Decodificación de la señal por detección de energía
+      
+      for k, b in enumerate(bits):
+            Ep = np.sum(Rx[k*p:(k+1)*p] * sinus)
+            if Ep > Es/2:
+                  bitsRx[k] = 1
+            else:
+                  bitsRx[k] = 0
+
+            #print(bitsRx)
+
+      err = np.sum(np.abs(bits - bitsRx))
+      # BER: Bit Error Rate (Bits malos entres bits totales)
+      BER = err/N
+
+      print('Hay un total de {} errores en {} bits para una tasa de error de {}.'.format(err, N, BER))
+
+Este código permite obtener en el array bits[Rx] un bit 1 si la energía de la señal original es mayor a la mitad de la energía de la señal ruidosa y en caso contrario obtener un bit 0. Como era de esperarse, si imprimimos el array bitsRx, se obtiene los mismos 10000 bits del archivo original. Finalmente, se calculó la tasa de error de los bits obtenidos. Se obtuvo lo siguiente:
+
+-Para un SNR = -2 la tasa de error fue de 0.0004
+-Para un SNR = -1 la tasa de error fue de 0.0002
+-Para un SNR = 0 la tasa de error fue de 0.0003
+-Para un SNR = 1 la tasa de error fue de 0.00
+-Para un SNR = 2 la tasa de error fue de 0.00
+-Para un SNR = 3 la tasa de error fue de 0.00
+
+Se puede observar que la tasa de error disminuye a medida que aumenta la relación de señal a ruido. En base a esto , se tomó la recomendación de hacer la prueba ahora para un intervalo de valores de SNR de -5 a 0; se obtuvo lo siguiente:
+
+
+-Para un SNR = -2 la tasa de error fue de 0.0123
+-Para un SNR = -1 la tasa de error fue de 0.0058
+-Para un SNR = 0 la tasa de error fue de 0.0027
+-Para un SNR = 1 la tasa de error fue de 0.0015
+-Para un SNR = 2 la tasa de error fue de 0.0003
+-Para un SNR = 3 la tasa de error fue de 0.00
+
 
 ##  PREGUNTA 6
 
-Ahora se tiene la gráfica de BER vs. SNR. Donde los valores del eje X correspondena a los valores del vector para los diferentes SNR y los valores del eje Y corresponden al vector de BER.
+Ahora se tiene la gráfica de BER vs. SNR. Donde los valores del eje X correspondena a los valores del vector para los diferentes SNR (-3, -2, -1, 0, 1, 2, 3) y los valores del eje Y corresponden al vector de BER.
+
+Para una primera simulación se obtuvo:
 
 ![curva](/curva.png)
+
+Para esta parte la gráfica en cada ocasión de simulación siempre va a dar diferente ya que está basada en los valores de BER (eje y); además el ruido es generado de forma aleatoria por lo que se va a tener el mismo comportmiento de decreciente, pero algunas variaciones. 
+
+Para una segunda simulación se obtuvo:
+
+![curva2](/curva2.png)
+
+
+
+
+
+
 
 
 
