@@ -137,21 +137,21 @@ Para esta parte, se utilizó las siguientes líneas de código:
 
 Este código permite obtener en el array bits[Rx] un bit 1 si la energía de la señal original es mayor a la mitad de la energía de la señal ruidosa y en caso contrario obtener un bit 0. Como era de esperarse, si imprimimos el array bitsRx, se obtiene los mismos 10000 bits del archivo original. Finalmente, se calculó la tasa de error de los bits obtenidos. Se obtuvo lo siguiente:
 
--Para un SNR = -2 la tasa de error fue de 0.0004
--Para un SNR = -1 la tasa de error fue de 0.0002
--Para un SNR = 0 la tasa de error fue de 0.0003
--Para un SNR = 1 la tasa de error fue de 0.00
--Para un SNR = 2 la tasa de error fue de 0.00
+-Para un SNR = -2 la tasa de error fue de 0.0004  
+-Para un SNR = -1 la tasa de error fue de 0.0002  
+-Para un SNR = 0 la tasa de error fue de 0.0003  
+-Para un SNR = 1 la tasa de error fue de 0.00  
+-Para un SNR = 2 la tasa de error fue de 0.00  
 -Para un SNR = 3 la tasa de error fue de 0.00
 
 Se puede observar que la tasa de error disminuye a medida que aumenta la relación de señal a ruido. En base a esto , se tomó la recomendación de hacer la prueba ahora para un intervalo de valores de SNR de -5 a 0; se obtuvo lo siguiente:
 
 
--Para un SNR = -2 la tasa de error fue de 0.0123
--Para un SNR = -1 la tasa de error fue de 0.0058
--Para un SNR = 0 la tasa de error fue de 0.0027
--Para un SNR = 1 la tasa de error fue de 0.0015
--Para un SNR = 2 la tasa de error fue de 0.0003
+-Para un SNR = -2 la tasa de error fue de 0.0123  
+-Para un SNR = -1 la tasa de error fue de 0.0058  
+-Para un SNR = 0 la tasa de error fue de 0.0027  
+-Para un SNR = 1 la tasa de error fue de 0.0015  
+-Para un SNR = 2 la tasa de error fue de 0.0003  
 -Para un SNR = 3 la tasa de error fue de 0.00
 
 
@@ -169,10 +169,7 @@ Para una segunda simulación se obtuvo:
 
 ![curva2](/curva2.png)
 
-
-
-
-
+Donde se puede observar el mismo comportamiento en la curva.
 
 
 
