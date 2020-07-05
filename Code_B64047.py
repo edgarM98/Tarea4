@@ -169,8 +169,21 @@ plt.show()
 
 # Antes del canal ruidoso
 fw, PSD = signal.welch(senal, fs, nperseg=1024)
+fw2, PSD2 = signal.welch(senal, fs, nperseg=1024)
+fw3, PSD3 = signal.welch(senal, fs, nperseg=1024)
+fw4, PSD4 = signal.welch(senal, fs, nperseg=1024)
+fw5, PSD5 = signal.welch(senal, fs, nperseg=1024)
+fw6, PSD6 = signal.welch(senal, fs, nperseg=1024)
+
 plt.figure()
+
 plt.semilogy(fw, PSD)
+plt.semilogy(fw2, PSD2)
+plt.semilogy(fw3, PSD3)
+plt.semilogy(fw4, PSD4)
+plt.semilogy(fw5, PSD5)
+plt.semilogy(fw6, PSD6)
+
 plt.xlabel('Frecuencia / Hz')
 plt.ylabel('Densidad espectral de potencia / V**2/Hz')
 plt.title("Antes del canal ruidoso")
