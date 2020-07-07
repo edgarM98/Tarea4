@@ -157,13 +157,13 @@ Se puede observar que la tasa de error disminuye a medida que aumenta la relaci�
 
 ##  PREGUNTA 6
 
-Ahora se tiene la gráfica de BER vs. SNR. Donde los valores del eje X correspondena a los valores del vector para los diferentes SNR (-3, -2, -1, 0, 1, 2, 3) y los valores del eje Y corresponden al vector de BER.
+Ahora se tiene la gráfica de BER vs. SNR. Donde los valores del eje Y correspondena a los valores del vector para los diferentes SNR (-3, -2, -1, 0, 1, 2, 3) y los valores del eje X corresponden al vector de BER.
 
 Para una primera simulación se obtuvo:
 
 ![curva](/curva3.png)
 
-Para esta parte la gráfica en cada ocasión de simulación siempre va a dar diferente ya que está basada en los valores de BER (eje y); además el ruido es generado de forma aleatoria por lo que se va a tener el mismo comportmiento de decreciente, pero algunas variaciones. 
+Para esta parte la gráfica en cada ocasión de simulación siempre va a dar diferente ya que está basada en los valores de BER (eje X); además el ruido es generado de forma aleatoria por lo que se va a tener el mismo comportmiento de decreciente, pero algunas variaciones. 
 
 Para una segunda simulación se obtuvo:
 
