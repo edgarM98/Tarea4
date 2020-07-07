@@ -20,7 +20,7 @@ Se realizó 50 puntos de muestreo para cada periodo de la señal. En la siguient
 ![onda](/onda.png)
 
 
-Luego se procedió a realizar la modulación tipo BPSK con el siguiente código, donde cómo podemos ver la función cambia de fase cada vez que se cambia de bit.
+Luego se procedió a realizar la modulación tipo BPSK con el siguiente código, donde cómo podemos ver la función cambia de fase (de seno a -seno) cada vez que se cambia de bit.
 
       # Creación de la señal modulada BPSK
       
