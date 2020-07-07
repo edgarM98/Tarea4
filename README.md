@@ -161,13 +161,13 @@ Ahora se tiene la gráfica de BER vs. SNR. Donde los valores del eje X correspon
 
 Para una primera simulación se obtuvo:
 
-![curva](/curva.png)
+![curva](/curva3.png)
 
 Para esta parte la gráfica en cada ocasión de simulación siempre va a dar diferente ya que está basada en los valores de BER (eje y); además el ruido es generado de forma aleatoria por lo que se va a tener el mismo comportmiento de decreciente, pero algunas variaciones. 
 
 Para una segunda simulación se obtuvo:
 
-![curva2](/curva2.png)
+![curva2](/curva4.png)
 
 Donde se puede observar el mismo comportamiento en la curva.
 
